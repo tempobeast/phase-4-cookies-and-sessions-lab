@@ -22,9 +22,10 @@ function Article() {
           setState({ article, error: null, status: "resolved" })
         );
       } else {
-        r.json().then((message) =>
+        r.json().then((message) => {
+          console.log(message)
           setState({ article: null, error: message.error, status: "rejected" })
-        );
+        });
       }
     });
   }, [id]);
